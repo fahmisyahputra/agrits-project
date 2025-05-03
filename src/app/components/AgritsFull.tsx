@@ -46,7 +46,9 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
         {/* Konten utama di tengah */}
         <div className="z-10">
           <h1 className="text-left text-xl md:text-2xl font-lexend mb-2 md:ml-[-15%] md:mb-[-5%]">
-            Selamat<br />datang !
+            Selamat
+            <br />
+            datang !
           </h1>
 
           <div className="flex flex-col md:flex-row items-center justify-center mb-4 gap-4">
@@ -66,22 +68,40 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
 
         <div className="absolute bottom-20 w-full text-center px-4">
           <p className="text-base md:text-lg font-museo max-w-xl mx-auto">
-            Monitoring Kesehatan Padi Berbasis Sentinel-2 dan Himawari-9 Upaya Meningkatkan Produktivitas Padi
+            Monitoring Kesehatan Padi Berbasis Sentinel-2 dan Himawari-9 Upaya
+            Meningkatkan Produktivitas Padi
           </p>
 
           <div className="mt-12">
-            <svg className="mx-auto animate-bounce" width="24" height="24" fill="none" viewBox="0 0 24 24">
-              <path d="M12 5v14M5 12l7 7 7-7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <svg
+              className="mx-auto animate-bounce"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 5v14M5 12l7 7 7-7"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </div>
         </div>
       </section>
 
       {/* Section Tentang */}
-      <section id="tentang" className="relative w-full min-h-screen py-40 md:pt-72 px-4 text-white">
+      <section
+        id="tentang"
+        className="relative w-full min-h-screen py-40 md:pt-72 px-4 text-white"
+      >
         <div className="container mx-auto flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 max-w-6xl">
           <div className="w-full md:w-[60%]">
-            <h2 className="font-league-spartan font-bold text-4xl md:text-4xl">Tentang</h2>
+            <h2 className="font-league-spartan font-bold text-4xl md:text-4xl">
+              Tentang
+            </h2>
             <div className="flex items-center mb-6 ml-[-7%] md:ml-[-4%]">
               <Image
                 src="/images/agrits.png"
@@ -92,12 +112,17 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
               />
             </div>
             <p className="font-museo text-sm md:text-base mb-4 leading-relaxed">
-              Sebuah laman yang dirancang untuk membantu kelompok petani Sendang Biru Made yang dapat menyediakan informasi mengenai
-              <span className="text-[#D7AE2F]"> Kekeringan dan Kesehatan Tanaman, Suhu Tanah , dan Curah Hujan.</span>
+              Sebuah laman yang dirancang untuk membantu kelompok petani Sendang
+              Biru Made yang dapat menyediakan informasi mengenai
+              <span className="text-[#D7AE2F]">
+                {" "}
+                Kekeringan dan Kesehatan Tanaman, Suhu Tanah , dan Curah Hujan.
+              </span>
             </p>
             <p className="font-museo text-sm md:text-base leading-relaxed">
               Dengan informasi ini, petani dapat mengambil keputusan yang
-              <span className="text-[#D7AE2F]"> lebih tepat waktu</span>, seperti penjadwalan irigasi, pemupukan, dan pengendalian hama,
+              <span className="text-[#D7AE2F]"> lebih tepat waktu</span>,
+              seperti penjadwalan irigasi, pemupukan, dan pengendalian hama,
               sehingga dapat meningkatkan hasil panen secara keseluruhan.
             </p>
           </div>
@@ -115,11 +140,16 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
       </section>
 
       {/* Section Proses Adanya AGRITS */}
-      <section id="proses" className="relative w-full min-h-screen md:py-40 px-4 text-white">
+      <section
+        id="proses"
+        className="relative w-full min-h-screen md:py-40 px-4 text-white"
+      >
         <div className="container mx-auto max-w-6xl flex flex-col gap-12">
           <div className="flex flex-col md:flex-row items-start justify-between gap-8">
             <div className="w-full pt-16 md:w-1/2 flex flex-col items-end justify-start mt-6 md:mt-0 pr-4 md:pr-12 order-1 md:order-2">
-              <h3 className="font-lexend text-2xl md:text-4xl mb-1">proses adanya</h3>
+              <h3 className="font-lexend text-2xl md:text-4xl mb-1">
+                proses adanya
+              </h3>
               <div className="flex mr-[-5%] mb-6">
                 <Image
                   src="/images/agrits.png"
@@ -141,7 +171,9 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
                 />
               </div>
               <div className="bg-white/20 backdrop-blur-sm rounded-b-2xl px-4 py-2 mt-2">
-                <p className="text-sm text-white/80 font-museo text-center">*deskripsi kegiatan</p>
+                <p className="text-sm text-white/80 font-museo text-center">
+                  *deskripsi kegiatan
+                </p>
               </div>
             </div>
           </div>
@@ -149,22 +181,38 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
           <div className="w-full">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl px-6 py-6 md:py-8 md:px-10 text-sm md:text-lg text-white/80 font-museo leading-relaxed max-w-6xl mx-auto">
               <p className="text-center md:text-left">
-                AGRITS lahir dari kebutuhan petani untuk memahami kondisi lahan dan tanaman secara lebih cepat dan akurat dengan data satelit,
+                AGRITS lahir dari kebutuhan petani untuk memahami kondisi lahan
+                dan tanaman secara lebih cepat dan akurat dengan data satelit,
                 guna meningkatkan efisiensi dan produktivitas pertanian lokal.
               </p>
             </div>
           </div>
 
           <div className="flex justify-center pt-4">
-            <svg className="animate-bounce" width="24" height="24" fill="none" viewBox="0 0 24 24">
-              <path d="M12 5v14M5 12l7 7 7-7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <svg
+              className="animate-bounce"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 5v14M5 12l7 7 7-7"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </div>
         </div>
       </section>
 
       {/* Information Section */}
-      <section id="informasi" className="relative w-full min-h-screen py-40 md:py-24 px-4 text-white">
+      <section
+        id="informasi"
+        className="relative w-full min-h-screen py-40 md:py-24 px-4 text-white"
+      >
         <div className="container mx-auto max-w-6xl flex flex-col md:flex-row items-start justify-between gap-12">
           {/* KIRI: Informasi Text + List */}
           <div className="w-full md:w-1/2">
@@ -273,16 +321,19 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
       </section>
 
       {/* Map Section */}
-      <section id="peta" className="relative w-full min-h-screen py-16 px-4 text-white">
-        <div className="w-full max-w-6xl mx-auto px-4">
+      <section
+        id="peta"
+        className="relative w-full min-h-screen md:py-16 px-2 md:px-4 text-white"
+      >
+        <div className="w-full max-w-6xl mx-auto md:px-4">
           {/* Judul + Logo */}
           <div className="flex items-center justify-between gap-6 mb-8">
             {/* Kiri - Judul */}
             <div className="flex items-center gap-4">
               <div className="h-12 w-1 bg-white"></div>
               <div>
-                <p className="font-museo-moderno text-3xl">Peta Lahan</p>
-                <p className="font-museo-moderno text-3xl font-semibold">
+                <p className="font-museo-moderno text-lg md:text-3xl">Peta Lahan</p>
+                <p className="font-museo-moderno text-lg md:text-3xl font-semibold">
                   Kesehatan Padi
                 </p>
               </div>
@@ -292,14 +343,14 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
             <Image
               src="/images/agrits-logo.png"
               alt="AGRITS Logo"
-              width={200}
-              height={200}
+              width={150}
+              height={150}
               className="rounded-md"
             />
           </div>
 
           {/* Peta */}
-          <div className="w-full aspect-video bg-white/10 backdrop-blur-sm rounded-lg overflow-hidden relative">
+          <div className="w-full h-[80vh] md:aspect-video bg-white/10 backdrop-blur-sm rounded-lg overflow-hidden relative">
             <iframe
               src="https://ee-teamduabelas1212.projects.earthengine.app/view/agrits"
               className="w-full h-full border-0"
@@ -308,16 +359,19 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
             />
 
             {/* Blur teks GEE */}
-            <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-lg p-4 w-1/3 max-w-xs"></div>
+            <div className="hidden md:block absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-lg p-4 w-1/3 max-w-xs"></div>
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="kontak" className="relative w-full min-h-screen pt-28 md:pt-36 px-4 text-white">
+      <section
+        id="kontak"
+        className="relative w-full min-h-screen pt-52 md:pt-36 px-4 text-white"
+      >
         <div className="w-full max-w-6xl mx-auto px-4">
           {/* Heading */}
-          <h2 className="font-league-spartan font-bold text-5xl mb-64">
+          <h2 className="font-league-spartan font-bold text-5xl mb-16 md:mb-64">
             Kontak Kami
           </h2>
 
@@ -326,12 +380,16 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
             {/* Kiri */}
             <div className="space-y-8">
               <div>
-                <h3 className="font-lexend font-bold md:text-2xl mb-1">Telepon</h3>
+                <h3 className="font-lexend font-bold md:text-2xl mb-1">
+                  Telepon
+                </h3>
                 <p className="text-white/90 md:text-2xl">(7777-7777-7777)</p>
               </div>
 
               <div>
-                <h3 className="font-lexend font-bold md:text-2xl mb-1">Alamat</h3>
+                <h3 className="font-lexend font-bold md:text-2xl mb-1">
+                  Alamat
+                </h3>
                 <p className="text-white/90 md:text-2xl">
                   Departemen Tenik Gematika, ITS
                   <br />
@@ -343,7 +401,9 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
             {/* Kanan */}
             <div className="space-y-8">
               <div>
-                <h3 className="font-lexend font-bold md:text-2xl mb-1">Email</h3>
+                <h3 className="font-lexend font-bold md:text-2xl mb-1">
+                  Email
+                </h3>
                 <p className="text-white/90 md:text-2xl">
                   teamduabelas1212@gmail.com
                 </p>
