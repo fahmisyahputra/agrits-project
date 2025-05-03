@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import { useSwipeable } from "react-swipeable";
 
 type AgritsSectionProps = {
   title: string;
@@ -26,6 +27,16 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
     { main: "Jenis Padi", sub: "" },
     { main: "Peta Lahan", sub: "Kesehatan Padi" },
   ];
+
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () =>
+      setActiveInfoSlide((prev) => (prev + 1) % infoImages.length),
+    onSwipedRight: () =>
+      setActiveInfoSlide((prev) =>
+        prev === 0 ? infoImages.length - 1 : prev - 1
+      ),
+    trackMouse: true,
+  });
 
   return (
     <div className="relative px-2 w-full overflow-x-hidden">
@@ -68,12 +79,25 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
 
         <div className="absolute bottom-20 w-full text-center px-4">
           <p className="text-base md:text-lg font-museo max-w-xl mx-auto">
-            Monitoring Kesehatan Padi Berbasis Sentinel-2 dan Himawari-9 Upaya Meningkatkan Produktivitas Padi
+            Monitoring Kesehatan Padi Berbasis Sentinel-2 dan Himawari-9 Upaya
+            Meningkatkan Produktivitas Padi
           </p>
 
           <div className="mb-4 mt-10 md:mt-12">
-            <svg className="mx-auto animate-bounce" width="24" height="24" fill="none" viewBox="0 0 24 24">
-              <path d="M12 5v14M5 12l7 7 7-7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <svg
+              className="mx-auto animate-bounce"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 5v14M5 12l7 7 7-7"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </div>
         </div>
@@ -133,7 +157,7 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
       >
         <div className="container mx-auto max-w-6xl flex flex-col gap-12">
           <div className="flex flex-col md:flex-row items-start justify-between gap-8">
-            <div className="w-full pt-16 md:w-1/2 flex flex-col items-end justify-start mt-6 md:mt-0 pr-4 md:pr-12 order-1 md:order-2">
+            <div className="w-full md:pt-16 md:w-1/2 flex flex-col items-end justify-start mt-6 md:mt-0 pr-4 md:pr-12 order-1 md:order-2">
               <h3 className="font-lexend text-2xl md:text-4xl mb-1">
                 proses adanya
               </h3>
@@ -195,13 +219,12 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
         </div>
       </section>
 
-      {/* Information Section */}
+      {/* Section Informasi dengan swipeable */}
       <section
         id="informasi"
         className="relative w-full min-h-screen py-40 md:py-24 px-4 text-white"
       >
         <div className="container mx-auto max-w-6xl flex flex-col md:flex-row items-start justify-between gap-12">
-          {/* KIRI: Informasi Text + List */}
           <div className="w-full md:w-1/2">
             <div className="flex ml-[-6%] md:ml-[-3%] mb-1">
               <Image
@@ -250,30 +273,34 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
             </p>
           </div>
 
-          {/* KANAN: Preview Gambar */}
           <div className="w-full md:w-1/2 flex flex-col items-center justify-start md:pt-8 md:mt-6">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-1 aspect-square w-full overflow-hidden relative max-w-md">
-              <div className="absolute inset-0 w-full h-full">
-                {infoImages.map((src, index) => (
-                  <div
-                    key={index}
-                    className={`absolute inset-0 transition-opacity duration-500 ${
-                      activeInfoSlide === index ? "opacity-100" : "opacity-0"
-                    }`}
-                  >
-                    <Image
-                      src={src}
-                      alt={`Information ${index + 1}`}
-                      fill
-                      className="object-cover rounded-2xl"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                  </div>
-                ))}
+            <div
+              {...swipeHandlers}
+              className="bg-white/10 backdrop-blur-sm rounded-2xl p-1 aspect-square w-full overflow-hidden relative max-w-md"
+            >
+              <div className="w-full overflow-hidden relative">
+                <div
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{
+                    transform: `translateX(-${activeInfoSlide * 100}%)`,
+                  }}
+                  {...swipeHandlers}
+                >
+                  {infoImages.map((src, index) => (
+                    <div key={index} className="w-full flex-shrink-0">
+                      <Image
+                        src={src}
+                        alt={`Information ${index + 1}`}
+                        width={600}
+                        height={600}
+                        className="object-cover w-full h-full rounded-2xl"
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
-            {/* Dots */}
             <div className="flex justify-center mt-8 md:mt-6 space-x-2">
               {infoImages.map((_, index) => (
                 <div
@@ -287,7 +314,6 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
             </div>
           </div>
         </div>
-        {/* Panah */}
         <div className="flex justify-center mt-24">
           <svg
             className="animate-bounce"
