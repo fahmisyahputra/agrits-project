@@ -42,10 +42,10 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
       </div>
 
       {/* Hero Section */}
-      <section className="relative h-screen w-full flex items-center justify-center text-white text-center px-4">
+      <section className="relative h-screen w-full flex items-start justify-center text-white text-center px-4">
         {/* Konten utama di tengah */}
-        <div className="z-10">
-          <h1 className="text-left text-xl md:text-2xl font-lexend mb-2 md:ml-[-15%] md:mb-[-5%]">
+        <div className="z-10 flex flex-col items-center justify-center h-[90%]">
+          <h1 className="self-start text-xl md:text-2xl font-lexend mb-2 md:mb-[-5%] md:ml-[-15%]">
             Selamat
             <br />
             datang !
@@ -61,32 +61,19 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
             />
           </div>
 
-          <p className="text-right text-sm opacity-90 font-museo mt-[-5%]">
+          <p className="text-right self-end text-sm opacity-90 font-museo mt-[-5%]">
             by teamduabelas
           </p>
         </div>
 
         <div className="absolute bottom-20 w-full text-center px-4">
           <p className="text-base md:text-lg font-museo max-w-xl mx-auto">
-            Monitoring Kesehatan Padi Berbasis Sentinel-2 dan Himawari-9 Upaya
-            Meningkatkan Produktivitas Padi
+            Monitoring Kesehatan Padi Berbasis Sentinel-2 dan Himawari-9 Upaya Meningkatkan Produktivitas Padi
           </p>
 
-          <div className="mt-12">
-            <svg
-              className="mx-auto animate-bounce"
-              width="24"
-              height="24"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 5v14M5 12l7 7 7-7"
-                stroke="white"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
+          <div className="mb-4 mt-10 md:mt-12">
+            <svg className="mx-auto animate-bounce" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path d="M12 5v14M5 12l7 7 7-7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
         </div>
@@ -99,16 +86,16 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
       >
         <div className="container mx-auto flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 max-w-6xl">
           <div className="w-full md:w-[60%]">
-            <h2 className="font-league-spartan font-bold text-4xl md:text-4xl">
+            <h2 className="font-league-spartan mb-2 md:mb-0 font-bold text-4xl md:text-4xl">
               Tentang
             </h2>
-            <div className="flex items-center mb-6 ml-[-7%] md:ml-[-4%]">
+            <div className="flex items-center mb-4 md:mb-6 ml-[-5%] md:ml-[-4%]">
               <Image
                 src="/images/agrits.png"
                 alt="AGRITS"
-                width={400}
-                height={400}
-                className="rounded-md max-w-full h-auto"
+                width={260}
+                height={260}
+                className="rounded-md w-[260px] md:max-w-full h-auto"
               />
             </div>
             <p className="font-museo text-sm md:text-base mb-4 leading-relaxed">
@@ -150,13 +137,13 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
               <h3 className="font-lexend text-2xl md:text-4xl mb-1">
                 proses adanya
               </h3>
-              <div className="flex mr-[-5%] mb-6">
+              <div className="flex mr-[-5%] md:mb-6">
                 <Image
                   src="/images/agrits.png"
                   alt="AGRITS"
-                  width={450}
-                  height={450}
-                  className="rounded-md max-w-full h-auto"
+                  width={260}
+                  height={260}
+                  className="rounded-md w-[260px] md:max-w-full h-auto"
                 />
               </div>
             </div>
@@ -222,7 +209,7 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
                 alt="AGRITS"
                 width={260}
                 height={260}
-                className="rounded-md"
+                className="rounded-md w-[260px] md:max-w-full h-auto"
               />
             </div>
             <p className="font-museo text-lg md:text-2xl mb-12 leading-relaxed max-w-[80%]">
@@ -332,7 +319,9 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
             <div className="flex items-center gap-4">
               <div className="h-12 w-1 bg-white"></div>
               <div>
-                <p className="font-museo-moderno text-lg md:text-3xl">Peta Lahan</p>
+                <p className="font-museo-moderno text-lg md:text-3xl">
+                  Peta Lahan
+                </p>
                 <p className="font-museo-moderno text-lg md:text-3xl font-semibold">
                   Kesehatan Padi
                 </p>
