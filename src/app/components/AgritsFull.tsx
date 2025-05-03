@@ -222,7 +222,7 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
       {/* Section Informasi dengan swipeable */}
       <section
         id="informasi"
-        className="relative w-full min-h-screen py-40 md:py-24 px-4 text-white"
+        className="relative w-full min-h-screen py-36 md:py-24 px-4 text-white"
       >
         <div className="container mx-auto max-w-6xl flex flex-col md:flex-row items-start justify-between gap-12">
           <div className="w-full md:w-1/2">

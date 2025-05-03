@@ -24,6 +24,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
+        <link rel="icon" href="/images/icon-agrits.png" type="image/png" />
       </head>
       <body className="antialiased font-museo">
         {children}
