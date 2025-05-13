@@ -1,6 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { lexend, leagueSpartan } from './fonts';
+import { lexend, leagueSpartan, mulish } from './fonts'; 
 
 export const metadata: Metadata = {
   title: 'AGRITS - Monitoring Kesehatan Padi',
@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className={`scroll-smooth ${lexend.variable} ${leagueSpartan.variable}`}
+      className={`scroll-smooth ${lexend.variable} ${leagueSpartan.variable} ${mulish.variable}`} 
     >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
