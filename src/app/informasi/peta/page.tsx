@@ -26,10 +26,16 @@ const PetaPage = () => {
           <div className="flex items-center gap-4">
             <div className="h-12 w-1 bg-white"></div>
             <div>
-              <p className="font-museo-moderno text-lg md:text-3xl">
+              <p
+                style={{ fontFamily: "MuseoModerno, sans-serif" }}
+                className="font-museo-moderno text-lg md:text-3xl"
+              >
                 Peta Lahan
               </p>
-              <p className="font-museo-moderno text-lg md:text-3xl font-semibold">
+              <p
+                style={{ fontFamily: "MuseoModerno, sans-serif" }}
+                className="font-museo-moderno text-lg md:text-3xl font-semibold"
+              >
                 Kesehatan Padi
               </p>
             </div>
@@ -55,17 +61,6 @@ const PetaPage = () => {
           />
           {/* Blur teks GEE */}
           <div className="hidden md:block absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-lg p-4 w-1/3 max-w-xs"></div>
-        </div>
-        {/* Tombol Link ke GEE */}
-        <div className="flex justify-center mt-8">
-          <a
-            href="https://ee-teamduabelas1212.projects.earthengine.app/view/agrits"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white text-black font-bold px-6 py-3 rounded-full shadow-md hover:bg-white/90 transition"
-          >
-            Lihat Peta di GEE
-          </a>
         </div>
       </div>
     </section>

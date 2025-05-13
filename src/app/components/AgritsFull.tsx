@@ -58,11 +58,11 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
       <section className="relative h-screen w-full flex items-start justify-center text-white text-center px-4">
         {/* Konten utama di tengah */}
         <div className="z-10 flex flex-col items-center justify-center h-[90%]">
-          <h1 className="self-start text-xl md:text-2xl font-lexend mb-2 md:mb-[-5%] md:ml-[-15%]">
+          {/* <h1 className="self-start text-xl md:text-2xl font-lexend mb-2 md:mb-[-5%] md:ml-[-15%]">
             Selamat
             <br />
             datang !
-          </h1>
+          </h1> */}
 
           <div className="flex flex-col md:flex-row items-center justify-center mb-4 gap-4">
             <Image
@@ -74,16 +74,23 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
             />
           </div>
 
-          <p className="text-right self-end text-sm opacity-90 font-museo mt-[-5%]">
+          {/* <p className="text-right self-end text-sm opacity-90 font-museo mt-[-5%]">
             by teamduabelas
+          </p> */}
+          <p
+            style={{ fontFamily: "MuseoModerno, sans-serif" }}
+            className="text-base md:text-xl font-medium font-museo max-w-xl mx-auto"
+          >
+            Monitoring Kesehatan Padi Berbasis Sentinel-2 dan Himawari-9 Upaya
+            Meningkatkan Produktivitas Padi
           </p>
         </div>
 
         <div className="absolute bottom-20 w-full text-center px-4">
-          <p className="text-base md:text-xl font-museo max-w-xl mx-auto">
+          {/* <p className="text-base md:text-xl font-museo max-w-xl mx-auto">
             Monitoring Kesehatan Padi Berbasis Sentinel-2 dan Himawari-9 Upaya
             Meningkatkan Produktivitas Padi
-          </p>
+          </p> */}
 
           <div className="mb-4 mt-10 md:mt-12">
             <svg
@@ -112,7 +119,10 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
       >
         <div className="container mx-auto flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 max-w-6xl">
           <div className="w-full md:w-[60%]">
-            <h2 className="font-league-spartan mb-2 md:mb-0 font-bold text-4xl md:text-5xl">
+            <h2
+              style={{ fontFamily: "League Spartan, sans-serif" }}
+              className="font-league-spartan mb-2 md:mb-0 font-bold text-4xl md:text-5xl"
+            >
               Tentang
             </h2>
             <div className="flex items-center mb-4 md:mb-6 ml-[-5%] md:ml-[-4%]">
@@ -124,7 +134,10 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
                 className="rounded-md w-[260px] md:max-w-full h-auto"
               />
             </div>
-            <p className="font-mulish text-sm md:text-xl mb-4 leading-relaxed">
+            <p
+              style={{ fontFamily: "Mulish, sans-serif" }}
+              className="font-mulish text-sm md:text-xl mb-4 leading-relaxed"
+            >
               <span className="font-bold">
                 AGRITS (Agricultural Remote-sensing and Information Technology
                 System)
@@ -136,7 +149,10 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
                 Kekeringan dan Kesehatan Tanaman, Suhu Tanah , dan Curah Hujan.
               </span>
             </p>
-            <p className="font-mulish text-sm md:text-xl leading-relaxed">
+            <p
+              style={{ fontFamily: "Mulish, sans-serif" }}
+              className="font-mulish text-sm md:text-xl leading-relaxed"
+            >
               Dengan informasi ini, petani dapat mengambil keputusan yang
               <span className="text-[#D7AE2F]"> lebih tepat waktu</span>,
               seperti penjadwalan irigasi, pemupukan, dan pengendalian hama,
@@ -164,9 +180,13 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
         <div className="container mx-auto max-w-6xl flex flex-col gap-12">
           <div className="flex flex-col md:flex-row items-start justify-between gap-8">
             <div className="w-full md:pt-16 md:w-1/2 flex flex-col items-end justify-start mt-6 md:mt-0 pr-4 md:pr-12 order-1 md:order-2">
-              <h3 className="font-lexend text-2xl md:text-5xl mb-1">
-                proses adanya
+              <h3
+                style={{ fontFamily: "MuseoModerno, sans-serif" }}
+                className="text-2xl md:text-5xl mb-1"
+              >
+                Proses Pembuatan
               </h3>
+
               <div className="flex mr-[-5%] md:mb-6">
                 <Image
                   src="/images/agrits.png"
@@ -206,7 +226,9 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
                         src={`/images/dokum-agrits-${index + 1}.jpg`}
                         alt={`Dokumentasi ${index + 1}`}
                         fill
-                        className="object-cover"
+                        className={`object-cover ${
+                          index === 2 ? "object-bottom" : ""
+                        }`}
                         sizes="600px"
                       />
                     </div>
@@ -228,8 +250,11 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
               </div>
 
               <div className="bg-white/20 backdrop-blur-sm rounded-b-2xl px-4 py-2 mt-2">
-                <p className="text-sm text-white/80 font-mulish text-center">
-                  *deskripsi kegiatan
+                <p
+                  style={{ fontFamily: "Mulish, sans-serif" }}
+                  className="text-sm text-white/80 font-mulish text-center"
+                >
+                  *proses pembuatan AGRITS
                 </p>
               </div>
             </div>
@@ -237,7 +262,10 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
 
           <div className="w-full">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl px-6 py-6 md:py-8 md:px-10 text-sm md:text-xl text-white/80 font-mulish leading-relaxed max-w-6xl mx-auto">
-              <p className="text-center md:text-left">
+              <p
+                style={{ fontFamily: "Mulish, sans-serif" }}
+                className="text-center md:text-left"
+              >
                 Pada tahun 2024, panen raya padi di Kelurahan Made pada 16 Maret
                 menghasilkan sekitar 3 ton dari lahan 0,9 hektar, cukup untuk
                 memenuhi kebutuhan beras warga selama setahun dan menekan harga
@@ -293,7 +321,6 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
           </div>
         </div>
       </section>
-
       {/* Section Informasi dengan swipeable */}
       <section
         id="informasi"
@@ -311,15 +338,25 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
                 className="rounded-md w-[260px] md:max-w-full h-auto"
               />
             </div>
-            <p className="font-museo text-lg md:text-2xl mb-12 leading-relaxed max-w-[80%]">
+            <p
+              style={{ fontFamily: "MuseoModerno, sans-serif" }}
+              className="text-lg md:text-2xl mb-12 leading-relaxed max-w-[80%]"
+            >
               membantu anda mendapatkan{" "}
               <span className="font-bold">informasi</span> tentang
             </p>
 
             <div className="space-y-6 mb-6 ml-4">
               {infoTitles.map((info, index) => (
-                <div
+                <a
                   key={index}
+                  href={
+                    index === 0
+                      ? "/informasi/tips"
+                      : index === 1
+                      ? "/informasi/jenis"
+                      : "/informasi/peta"
+                  }
                   className={`flex items-center gap-3 cursor-pointer transition-all ${
                     activeInfoSlide === index
                       ? "scale-105 text-white"
@@ -333,27 +370,35 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
                     }`}
                   />
                   <div>
-                    <p className="font-museo text-base md:text-xl">
+                    <p
+                      style={{ fontFamily: "League Spartan, sans-serif" }}
+                      className="text-base md:text-xl"
+                    >
                       {info.main}
                     </p>
                     {info.sub && (
-                      <p className="font-museo text-lg md:text-xl font-semibold">
+                      <p
+                        style={{ fontFamily: "League Spartan, sans-serif" }}
+                        className="text-lg md:text-xl font-semibold"
+                      >
                         {info.sub}
                       </p>
                     )}
                   </div>
-                </div>
+                </a>
               ))}
             </div>
 
-            <p className="text-white/60 font-museo text-sm md:text-base mt-12">
+            <p
+              style={{ fontFamily: "MuseoModerno, sans-serif" }}
+              className="text-white/60 text-sm md:text-base mt-12"
+            >
               *pilih yang anda butuhkan
             </p>
           </div>
 
           {/* KANAN: Swipeable Image Preview */}
           <div className="w-full md:w-1/2 flex flex-col items-center justify-start md:pt-8 md:mt-6">
-            {/* Swipeable Wrapper */}
             <div
               {...swipeHandlers}
               className="bg-white/10 backdrop-blur-sm rounded-2xl p-1 aspect-square w-full overflow-hidden relative max-w-md"
@@ -392,22 +437,6 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
                 />
               ))}
             </div>
-
-            {/* Tombol Lihat Selengkapnya */}
-            <div className="mt-6">
-              <a
-                href={
-                  activeInfoSlide === 0
-                    ? "/informasi/tips"
-                    : activeInfoSlide === 1
-                    ? "/informasi/jenis"
-                    : "/informasi/peta"
-                }
-                className="inline-block px-6 py-2 bg-white text-black rounded-full text-sm font-semibold hover:bg-gray-200 transition"
-              >
-                Lihat Selengkapnya
-              </a>
-            </div>
           </div>
         </div>
 
@@ -443,10 +472,16 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
             <div className="flex items-center gap-4">
               <div className="h-12 w-1 bg-white"></div>
               <div>
-                <p className="font-museo-moderno text-lg md:text-3xl">
+                <p
+                  style={{ fontFamily: "MuseoModerno, sans-serif" }}
+                  className="font-museo-moderno text-lg md:text-3xl"
+                >
                   Peta Lahan
                 </p>
-                <p className="font-museo-moderno text-lg md:text-3xl font-semibold">
+                <p
+                  style={{ fontFamily: "MuseoModerno, sans-serif" }}
+                  className="font-museo-moderno text-lg md:text-3xl font-semibold"
+                >
                   Kesehatan Padi
                 </p>
               </div>
@@ -474,17 +509,6 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
             {/* Blur teks GEE */}
             <div className="hidden md:block absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-lg p-4 w-1/3 max-w-xs"></div>
           </div>
-          {/* Tombol Link ke GEE */}
-          <div className="flex justify-center mt-8">
-            <a
-              href="https://ee-teamduabelas1212.projects.earthengine.app/view/agrits"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white text-black font-bold px-6 py-3 rounded-full shadow-md hover:bg-white/90 transition"
-            >
-              Lihat Peta di GEE
-            </a>
-          </div>
         </div>
       </section>
 
@@ -495,7 +519,10 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
       >
         <div className="w-full max-w-6xl mx-auto px-4">
           {/* Heading */}
-          <h2 className="font-league-spartan font-bold text-5xl mb-16 md:mb-64">
+          <h2
+            style={{ fontFamily: "Lexend, sans-serif" }}
+            className="font-league-spartan font-bold text-5xl mb-16 md:mb-64"
+          >
             Kontak Kami
           </h2>
 
@@ -504,17 +531,31 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
             {/* Kiri */}
             <div className="space-y-8">
               <div>
-                <h3 className="font-lexend font-bold md:text-2xl mb-1">
+                <h3
+                  style={{ fontFamily: "Lexend, sans-serif" }}
+                  className="font-lexend font-bold md:text-2xl mb-1"
+                >
                   Telepon
                 </h3>
-                <p className="text-white/90 md:text-2xl">(7777-7777-7777)</p>
+                <p
+                  style={{ fontFamily: "Lexend, sans-serif" }}
+                  className="text-white/90 md:text-2xl"
+                >
+                  082139417043
+                </p>
               </div>
 
               <div>
-                <h3 className="font-lexend font-bold md:text-2xl mb-1">
+                <h3
+                  style={{ fontFamily: "Lexend, sans-serif" }}
+                  className="font-lexend font-bold md:text-2xl mb-1"
+                >
                   Alamat
                 </h3>
-                <p className="text-white/90 md:text-2xl">
+                <p
+                  style={{ fontFamily: "Lexend, sans-serif" }}
+                  className="text-white/90 md:text-2xl"
+                >
                   Departemen Tenik Gematika, ITS
                   <br />
                   Surabaya
@@ -525,19 +566,31 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
             {/* Kanan */}
             <div className="space-y-8">
               <div>
-                <h3 className="font-lexend font-bold md:text-2xl mb-1">
+                <h3
+                  style={{ fontFamily: "Lexend, sans-serif" }}
+                  className="font-lexend font-bold md:text-2xl mb-1"
+                >
                   Email
                 </h3>
-                <p className="text-white/90 md:text-2xl">
+                <p
+                  style={{ fontFamily: "Lexend, sans-serif" }}
+                  className="text-white/90 md:text-2xl"
+                >
                   teamduabelas1212@gmail.com
                 </p>
               </div>
 
               <div>
-                <h3 className="font-lexend font-bold md:text-2xl mb-1">
+                <h3
+                  style={{ fontFamily: "Lexend, sans-serif" }}
+                  className="font-lexend font-bold md:text-2xl mb-1"
+                >
                   Media Sosial
                 </h3>
-                <p className="text-white/90 md:text-2xl">
+                <p
+                  style={{ fontFamily: "Lexend, sans-serif" }}
+                  className="text-white/90 md:text-2xl"
+                >
                   Instagram Official : @k12emker
                 </p>
               </div>

@@ -5,11 +5,11 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { href: "#tentang", label: "tentang" },
-  { href: "#proses", label: "proses" },
-  { href: "#informasi", label: "informasi" },
-  { href: "#peta", label: "peta" },
-  { href: "#kontak", label: "kontak" },
+  { href: "#tentang", label: "Tentang" },
+  { href: "#proses", label: "Asal Usul" },
+  { href: "#informasi", label: "Informasi Padi" },
+  { href: "#peta", label: "Peta Kesehatan" },
+  { href: "#kontak", label: "Kontak" },
 ];
 
 const Navigation: React.FC = () => {
@@ -35,6 +35,7 @@ const Navigation: React.FC = () => {
             <Link
               key={item.href}
               href={item.href}
+              style={{ fontFamily: "Lexend, sans-serif" }}
               className="text-sm font-museo px-4 py-2 rounded-full hover:bg-white/20 transition-all"
             >
               {item.label}
@@ -50,6 +51,7 @@ const Navigation: React.FC = () => {
             <Link
               key={item.href}
               href={item.href}
+              style={{ fontFamily: "Lexend, sans-serif" }}
               className="text-white font-museo text-lg hover:text-yellow-400"
               onClick={() => setIsOpen(false)}
             >
