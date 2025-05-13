@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import { useSwipeable } from "react-swipeable";
 
@@ -37,6 +37,8 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
       ),
     trackMouse: true,
   });
+
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className="relative px-2 w-full overflow-x-hidden">
@@ -78,7 +80,7 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
         </div>
 
         <div className="absolute bottom-20 w-full text-center px-4">
-          <p className="text-base md:text-lg font-museo max-w-xl mx-auto">
+          <p className="text-base md:text-xl font-museo max-w-xl mx-auto">
             Monitoring Kesehatan Padi Berbasis Sentinel-2 dan Himawari-9 Upaya
             Meningkatkan Produktivitas Padi
           </p>
@@ -110,27 +112,31 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
       >
         <div className="container mx-auto flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 max-w-6xl">
           <div className="w-full md:w-[60%]">
-            <h2 className="font-league-spartan mb-2 md:mb-0 font-bold text-4xl md:text-4xl">
+            <h2 className="font-league-spartan mb-2 md:mb-0 font-bold text-4xl md:text-5xl">
               Tentang
             </h2>
             <div className="flex items-center mb-4 md:mb-6 ml-[-5%] md:ml-[-4%]">
               <Image
                 src="/images/agrits.png"
                 alt="AGRITS"
-                width={260}
-                height={260}
+                width={300}
+                height={300}
                 className="rounded-md w-[260px] md:max-w-full h-auto"
               />
             </div>
-            <p className="font-museo text-sm md:text-base mb-4 leading-relaxed">
-              Sebuah laman yang dirancang untuk membantu kelompok petani Sendang
-              Biru Made yang dapat menyediakan informasi mengenai
+            <p className="font-mulish text-sm md:text-xl mb-4 leading-relaxed">
+              <span className="font-bold">
+                AGRITS (Agricultural Remote-sensing and Information Technology
+                System)
+              </span>{" "}
+              adalah sebuah laman yang dirancang untuk membantu Kelompok Petani
+              Sendang Biru Made yang dapat menyediakan informasi mengenai
               <span className="text-[#D7AE2F]">
                 {" "}
                 Kekeringan dan Kesehatan Tanaman, Suhu Tanah , dan Curah Hujan.
               </span>
             </p>
-            <p className="font-museo text-sm md:text-base leading-relaxed">
+            <p className="font-mulish text-sm md:text-xl leading-relaxed">
               Dengan informasi ini, petani dapat mengambil keputusan yang
               <span className="text-[#D7AE2F]"> lebih tepat waktu</span>,
               seperti penjadwalan irigasi, pemupukan, dan pengendalian hama,
@@ -142,8 +148,8 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
             <Image
               src="/images/logo-tentang-agrits.png"
               alt="AGRITS Logo"
-              width={200}
-              height={200}
+              width={250}
+              height={250}
               className="object-contain max-w-full h-auto"
             />
           </div>
@@ -158,31 +164,71 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
         <div className="container mx-auto max-w-6xl flex flex-col gap-12">
           <div className="flex flex-col md:flex-row items-start justify-between gap-8">
             <div className="w-full md:pt-16 md:w-1/2 flex flex-col items-end justify-start mt-6 md:mt-0 pr-4 md:pr-12 order-1 md:order-2">
-              <h3 className="font-lexend text-2xl md:text-4xl mb-1">
+              <h3 className="font-lexend text-2xl md:text-5xl mb-1">
                 proses adanya
               </h3>
               <div className="flex mr-[-5%] md:mb-6">
                 <Image
                   src="/images/agrits.png"
                   alt="AGRITS"
-                  width={260}
-                  height={260}
+                  width={360}
+                  height={360}
                   className="rounded-md w-[260px] md:max-w-full h-auto"
                 />
               </div>
             </div>
             <div className="w-full md:w-1/2 order-2 md:order-1">
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 aspect-square relative overflow-hidden">
-                <Image
-                  src="/images/foto-kegiatan-awal.jpg"
-                  alt="Foto Kegiatan"
-                  fill
-                  className="object-cover rounded-2xl"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
+              <div className="relative">
+                {/* Panah kiri */}
+                <button
+                  onClick={() =>
+                    scrollRef.current?.scrollBy({
+                      left: -620,
+                      behavior: "smooth",
+                    })
+                  }
+                  className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/20 p-2 rounded-full hover:bg-white/40"
+                >
+                  ←
+                </button>
+
+                {/* Scrollable gambar */}
+                <div
+                  ref={scrollRef}
+                  className="overflow-x-auto scrollbar-hide flex gap-4 snap-x snap-mandatory px-8"
+                >
+                  {[...Array(8)].map((_, index) => (
+                    <div
+                      key={index}
+                      className="relative w-[600px] h-[600px] flex-shrink-0 snap-center rounded-2xl overflow-hidden bg-black/10 backdrop-blur-md"
+                    >
+                      <Image
+                        src={`/images/dokum-agrits-${index + 1}.jpg`}
+                        alt={`Dokumentasi ${index + 1}`}
+                        fill
+                        className="object-cover"
+                        sizes="600px"
+                      />
+                    </div>
+                  ))}
+                </div>
+
+                {/* Panah kanan */}
+                <button
+                  onClick={() =>
+                    scrollRef.current?.scrollBy({
+                      left: 620,
+                      behavior: "smooth",
+                    })
+                  }
+                  className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-black/10 p-2 rounded-full hover:bg-black/40"
+                >
+                  →
+                </button>
               </div>
+
               <div className="bg-white/20 backdrop-blur-sm rounded-b-2xl px-4 py-2 mt-2">
-                <p className="text-sm text-white/80 font-museo text-center">
+                <p className="text-sm text-white/80 font-mulish text-center">
                   *deskripsi kegiatan
                 </p>
               </div>
@@ -190,11 +236,40 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
           </div>
 
           <div className="w-full">
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl px-6 py-6 md:py-8 md:px-10 text-sm md:text-lg text-white/80 font-museo leading-relaxed max-w-6xl mx-auto">
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl px-6 py-6 md:py-8 md:px-10 text-sm md:text-xl text-white/80 font-mulish leading-relaxed max-w-6xl mx-auto">
               <p className="text-center md:text-left">
-                AGRITS lahir dari kebutuhan petani untuk memahami kondisi lahan
-                dan tanaman secara lebih cepat dan akurat dengan data satelit,
-                guna meningkatkan efisiensi dan produktivitas pertanian lokal.
+                Pada tahun 2024, panen raya padi di Kelurahan Made pada 16 Maret
+                menghasilkan sekitar 3 ton dari lahan 0,9 hektar, cukup untuk
+                memenuhi kebutuhan beras warga selama setahun dan menekan harga
+                beras. Padi berasal dari{" "}
+                <span className="font-bold">Kelompok Petani Sendang Biru,</span>{" "}
+                varietas premium IR 64, yang berkualitas tinggi dan tahan hama.
+                Meskipun padi baru dipanen sekali, tanaman lain di wilayah
+                tersebut menunjukkan{" "}
+                <span className="font-bold">potensi produktivitas</span> yang
+                lebih tinggi, dengan cabai dipanen lima kali dan kacang panjang
+                hampir dua belas kali, menunjukkan perbedaan yang signifikan.
+                Hal ini menunjukkan bahwa meskipun padi masih dalam tahap
+                pengembangan, tanaman lain telah memberikan hasil yang
+                signifikan. Hal ini mendorong inisiatif bagi kami untuk
+                menyediakan analisis berbasis data yang dapat digunakan untuk
+                monitoring kesehatan tanaman secara cepat dan efisien.
+                <br></br>
+                <br></br>
+                <span className="font-bold">
+                  AGRITS (Agricultural Remote-sensing and Information Technology
+                  System),
+                </span>{" "}
+                dirancang untuk membantu kelompok petani Sendang Biru Made yang
+                dapat menyediakan informasi mengenai kondisi vegetasi berbasis{" "}
+                <span className="font-bold">Satelit Sentinel-2,</span>{" "}
+                pemantauan kekeringan dan kesehatan tanaman berbasis{" "}
+                <span className="font-bold">Satelit CHRIPS</span>, memantau suhu
+                permukaan tanah berbasis{" "}
+                <span className="font-bold">Satelit Landsat 8 OLI/TIRS</span>,
+                memantau curah hujan berbasis{" "}
+                <span className="font-bold">Satelit Himawari-9</span>, sehingga
+                dapat melakukan prediksi hasil panen berbasis penginderaan jauh.
               </p>
             </div>
           </div>
@@ -225,6 +300,7 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
         className="relative w-full min-h-screen py-36 md:py-24 px-4 text-white"
       >
         <div className="container mx-auto max-w-6xl flex flex-col md:flex-row items-start justify-between gap-12">
+          {/* KIRI: Informasi Text + List */}
           <div className="w-full md:w-1/2">
             <div className="flex ml-[-6%] md:ml-[-3%] mb-1">
               <Image
@@ -257,9 +333,11 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
                     }`}
                   />
                   <div>
-                    <p className="font-museo text-base">{info.main}</p>
+                    <p className="font-museo text-base md:text-xl">
+                      {info.main}
+                    </p>
                     {info.sub && (
-                      <p className="font-museo text-lg font-semibold">
+                      <p className="font-museo text-lg md:text-xl font-semibold">
                         {info.sub}
                       </p>
                     )}
@@ -268,12 +346,14 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
               ))}
             </div>
 
-            <p className="text-white/60 font-museo text-sm mt-12">
+            <p className="text-white/60 font-museo text-sm md:text-base mt-12">
               *pilih yang anda butuhkan
             </p>
           </div>
 
+          {/* KANAN: Swipeable Image Preview */}
           <div className="w-full md:w-1/2 flex flex-col items-center justify-start md:pt-8 md:mt-6">
+            {/* Swipeable Wrapper */}
             <div
               {...swipeHandlers}
               className="bg-white/10 backdrop-blur-sm rounded-2xl p-1 aspect-square w-full overflow-hidden relative max-w-md"
@@ -284,7 +364,6 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
                   style={{
                     transform: `translateX(-${activeInfoSlide * 100}%)`,
                   }}
-                  {...swipeHandlers}
                 >
                   {infoImages.map((src, index) => (
                     <div key={index} className="w-full flex-shrink-0">
@@ -301,6 +380,7 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
               </div>
             </div>
 
+            {/* Dots */}
             <div className="flex justify-center mt-8 md:mt-6 space-x-2">
               {infoImages.map((_, index) => (
                 <div
@@ -312,8 +392,26 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
                 />
               ))}
             </div>
+
+            {/* Tombol Lihat Selengkapnya */}
+            <div className="mt-6">
+              <a
+                href={
+                  activeInfoSlide === 0
+                    ? "/informasi/tips"
+                    : activeInfoSlide === 1
+                    ? "/informasi/jenis"
+                    : "/informasi/peta"
+                }
+                className="inline-block px-6 py-2 bg-white text-black rounded-full text-sm font-semibold hover:bg-gray-200 transition"
+              >
+                Lihat Selengkapnya
+              </a>
+            </div>
           </div>
         </div>
+
+        {/* Panah ke bawah */}
         <div className="flex justify-center mt-24">
           <svg
             className="animate-bounce"
@@ -375,6 +473,17 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
 
             {/* Blur teks GEE */}
             <div className="hidden md:block absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-lg p-4 w-1/3 max-w-xs"></div>
+          </div>
+          {/* Tombol Link ke GEE */}
+          <div className="flex justify-center mt-8">
+            <a
+              href="https://ee-teamduabelas1212.projects.earthengine.app/view/agrits"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-black font-bold px-6 py-3 rounded-full shadow-md hover:bg-white/90 transition"
+            >
+              Lihat Peta di GEE
+            </a>
           </div>
         </div>
       </section>
