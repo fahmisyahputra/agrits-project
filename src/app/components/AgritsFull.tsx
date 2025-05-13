@@ -78,8 +78,8 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
             by teamduabelas
           </p> */}
           <p
-            style={{ fontFamily: "MuseoModerno, sans-serif" }}
-            className="text-base md:text-xl font-medium font-museo max-w-xl mx-auto"
+            style={{ fontFamily: "Mulish, sans-serif" }}
+            className="text-base md:text-xl font-extrabold font-museo max-w-xl mx-auto"
           >
             Monitoring Kesehatan Padi Berbasis Sentinel-2 dan Himawari-9 Upaya
             Meningkatkan Produktivitas Padi
@@ -125,7 +125,7 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
             >
               Tentang
             </h2>
-            <div className="flex items-center mb-4 md:mb-6 ml-[-5%] md:ml-[-4%]">
+            <div className="flex items-center mb-4 md:mb-6 ml-[-5%] md:ml-[-3%]">
               <Image
                 src="/images/agrits.png"
                 alt="AGRITS"
@@ -136,7 +136,7 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
             </div>
             <p
               style={{ fontFamily: "Mulish, sans-serif" }}
-              className="font-mulish text-sm md:text-xl mb-4 leading-relaxed"
+              className="font-mulish text-sm md:text-xl md:text-justify mb-4 leading-relaxed"
             >
               <span className="font-bold">
                 AGRITS (Agricultural Remote-sensing and Information Technology
@@ -151,7 +151,7 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
             </p>
             <p
               style={{ fontFamily: "Mulish, sans-serif" }}
-              className="font-mulish text-sm md:text-xl leading-relaxed"
+              className="font-mulish text-sm md:text-xl md:text-justify leading-relaxed"
             >
               Dengan informasi ini, petani dapat mengambil keputusan yang
               <span className="text-[#D7AE2F]"> lebih tepat waktu</span>,
@@ -254,7 +254,7 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
                   style={{ fontFamily: "Mulish, sans-serif" }}
                   className="text-sm text-white/80 font-mulish text-center"
                 >
-                  *proses pembuatan AGRITS
+                  Proses Pembuatan AGRITS
                 </p>
               </div>
             </div>
@@ -264,7 +264,7 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
             <div className="bg-white/10 backdrop-blur-md rounded-2xl px-6 py-6 md:py-8 md:px-10 text-sm md:text-xl text-white/80 font-mulish leading-relaxed max-w-6xl mx-auto">
               <p
                 style={{ fontFamily: "Mulish, sans-serif" }}
-                className="text-center md:text-left"
+                className="text-center md:text-justify"
               >
                 Pada tahun 2024, panen raya padi di Kelurahan Made pada 16 Maret
                 menghasilkan sekitar 3 ton dari lahan 0,9 hektar, cukup untuk
