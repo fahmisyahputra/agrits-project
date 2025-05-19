@@ -556,13 +556,13 @@ const AgritsFull: React.FC<AgritsSectionProps> = ({
                   style={{ fontFamily: "Lexend, sans-serif" }}
                   className="text-white/90 md:text-2xl"
                 >
-                  Departemen Tenik Gematika, ITS
+                  Departemen Teknik Geomatika, ITS
                   <br />
                   Surabaya
                 </p>
               </div>
             </div>
-
+            
             {/* Kanan */}
             <div className="space-y-8">
               <div>
