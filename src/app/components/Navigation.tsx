@@ -37,14 +37,14 @@ const Navigation: React.FC = () => {
           <Image
             src="/images/logo-pojok.png"
             alt="AGRITS Logo"
-            width={40}
-            height={40}
-            className="rounded-md w-20 md:w-24 h-12 object-contain"
+            width={500}
+            height={500}
+            className="rounded-md w-28 md:w-36 "
           />
         </div>
 
         {/* Desktop Navigation - Centered */}
-        <nav className="hidden md:flex gap-4 bg-white/10 border border-white/30 rounded-full px-6 py-2 backdrop-blur-sm mx-auto md:ml-[15%]">
+        <nav className="hidden md:flex gap-4 bg-white/10 border border-white/30 rounded-full px-6 py-2 backdrop-blur-sm mx-auto md:ml-[12%]">
           {navItems.map((item) => (
             <Link
               key={item.href}
